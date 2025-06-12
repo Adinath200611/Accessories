@@ -23,7 +23,6 @@
 video {
   display: flex;
   max-width: 100%;
-  border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -43,10 +42,6 @@ video {
   border-radius: 50%;
 }
 
-
-
-
-  
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
@@ -69,7 +64,18 @@ video {
   border-radius: 12px; 
 }
 
-
+.v1 h3{
+  color:black;
+   z-index:1000 ;
+   position: absolute;
+   margin-top: 100px;
+   margin-left: 35%;
+   font-size: 80px;
+}
+.v1 video{
+  z-index: -1;
+  position: relative;
+}
   
   .product-card h2 {
     margin: 15px 0 5px;
@@ -80,7 +86,7 @@ video {
     font-size: 1.1em;
   }
 
-  button {
+  .product-card button {
     background-color: #222;
     color: #fff;
     border: none;
@@ -90,12 +96,13 @@ video {
     cursor: pointer;
     transition: background-color 0.3s;
     transition-property: inherit;
+    display: inline-block;
   }
   
   .button:hover {
-    background-color: #555;
-    transition: cubic-bezier(0.23, 1, 0.320, 1);
-  }
+    background-color: #8d3333;
+    transform: scale(1.1);
+  } 
 
 
 .footer{
@@ -147,7 +154,7 @@ video {
 .floating-cart {
   
   top: 20px;
-  right: 20px; /* moves to top-right */
+  right: 20px;
   background-color: black;
   color: white;
   padding: 10px 16px;
