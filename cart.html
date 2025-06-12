@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Aura Essentials</title>
+  <link rel="stylesheet" href="cart.css">
+  <link rel="icon" href="Logo.jpg" type="image/png">
+</head>
+<body>
+
+<header>
+  <h1>Your Shopping Cart 🛒</h1>
+  <a href="index.html" class="back-btn">← Continue Shopping</a>
+</header>
+
+<main>
+  <div id="cart-container"></div>
+  <div id="cart-summary">
+    <h2>Total: Rs. <span id="total-price">0</span></h2>
+    <a href="payment.html"><button onclick="checkout()">Proceed to Checkout</button></a>
+  </div>
+</main>
+
+<script>
+  const container = document.getElementById("cart-container");
+  const totalSpan = document.getElementById("total-price");
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function displayCart() {
+    container.innerHTML = "";
+    let total = 0;
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Your cart is empty!</p>";
+      document.getElementById("cart-summary").style.display = "none";
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const price = parseInt(item.price.replace(/[^0-9]/g, ""));
+      total += price;
+
+      const itemDiv = document.createElement("div");
+      itemDiv.className = "cart-item";
+      itemDiv.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.price}</p>
+          <button onclick="removeItem(${index})">Remove</button>
+        </div>
+      `;
+      container.appendChild(itemDiv);
+    });
+
+    totalSpan.textContent = total;
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+  }
+
+  function checkout() {
+    alert("Proceeding to checkout. This can be integrated with payment gateway.");
+  }
+
+  displayCart();
+</script>
+
+</body>
+</html>

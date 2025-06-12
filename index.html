@@ -9,96 +9,129 @@
 </head>
 <body>
 <div class="header">
-  <img src="Logo.jpg" alt="logo"  class="logo"  height="60px" width="50px"   onclick="location.href='https://mathewjod.github.io/REVANIEXCHANGE/#home'">
-  <h1>Accessories</h1>
+  <img src="Logo.jpg" alt="logo" class="logo" height="60px" width="50px"
+       onclick="location.href='https://mathewjod.github.io/REVANIEXCHANGE/#home'">
+  <a href="cart.html" class="floating-cart">🛒 Cart (<span id="cart-count">0</span>)</a>
 </div>
 
 
-  <section class="products">
-    <div class="product-card">
-      <img src="Cap.png"  alt="Cap" class="product-image" >
-      <h2>Men Poly Cotton Cap</h2>
-      <p><b>₹699</b></p>
-      <button onclick="location.href='order.html'" title="click here to buy">Buy now</button>
-    </div>
-    
-     <div class="product-card">
-      <img src="Sunglass.png"  alt="sunglass" width="100px" class="product-image">
-      <h2>Sunglass</h2>
-      <p><b>₹10000</b></p>
-      <button onclick="location.href='order.html'" title="click here to buy">Buy now</button>
-     </div>
 
-    <div class="product-card">
-      <img src="Bracelet.png"  alt="Bracelet" class="product-image">
-      <h2> Bracelet</h2>
-      <p><b>₹1000</b></p>
-      <button onclick="location.href='order.html'" title="click here to buy">Buy now</button>
-    </div>
-    <div class="product-card">
-        <img src="https://yellowchimes.com/cdn/shop/files/51gkPeWD60L.jpg?v=1738081581&width=713" height="290" alt="ring">
-        <h2>Ring</h2>
-        <p><b>₹300</b></p>
-        <button onclick="location.href='order.html'" title="click here to buy">Buy now</button>
-      </div>
-    <div class="product-card">
-        <img src="Belt.jpg" height="200px"  width="400px"  alt="belt">
-        <h2>Leather Belt</h2>
-        <p><b>₹999</b></p>
-        <button onclick="location.href='order.html'"   title="click here to buy">Buy now</button>
-    </div>
-    <div class="product-card">
-        <img src="Wallet.png" height="290" alt="wallet">
-        <h2>Wallet</h2>
-        <p><b>₹799</b></p>
-        <button onclick="location.href='order.html'"  title="click here to buy">Buy now</button>
-    </div>
-    <div class="product-card">
-        <img src="Watch.png" height="300px" alt="watch">
-        <h2>Watch</h2>
-        <p><b>₹15000</b></p>
-        <button onclick="location.href='order.html'"  title="click here to buy">Buy now</button>
-    </div>
-    <div class="product-card">
-      <img  src="Bag.jpg" height="300px" width="200px" alt="Tbag">
-      <h2>Travel bag</h2>
-      <p><b>₹2000</b></p>
-      <button onclick="location.href='order.html'"  title="click here to buy">Buy now</button>
+
+<video autoplay muted loop width="100%">
+  <source src="Accesories intro.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+<section class="products">
+  <div class="product-card">
+    <img src="Cap.png"  alt="Cap" class="product-image" >
+    <h2>Men Poly Cotton Cap</h2>
+    <p><b>₹699</b></p>
+    <button onclick="location.href='payment.html'" title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Cap.png','Men Poly Cotton Cap','₹699')"  title="click here">Add to Cart</button>
   </div>
   <div class="product-card">
-    <img     src="https://m.media-amazon.com/images/I/41NFzDAc82L._SX300_SY300_QL70_FMwebp_.jpg" height="300px" alt="S watch">
+    <img src="Sunglass.png"  alt="sunglass" class="product-image">
+    <h2>Sunglass</h2>
+    <p><b>₹10000</b></p>
+    <button onclick="location.href='payment.html'" title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Sunglass.png','Sunglass','₹10000')"  title="click here">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Bracelet.png"  alt="Bracelet" class="product-image">
+    <h2>Bracelet</h2>
+    <p><b>₹1000</b></p>
+    <button onclick="location.href='payment.html'" title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Bracelet.png','Bracelet','₹1000')"  title="click here">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="https://yellowchimes.com/cdn/shop/files/51gkPeWD60L.jpg?v=1738081581&width=713" height="290" alt="ring">
+    <h2>Ring</h2>
+    <p><b>₹300</b></p>
+    <button onclick="location.href='payment.html'" title="click here to buy">Buy now</button>
+    <button onclick="addToCart('https://yellowchimes.com/cdn/shop/files/51gkPeWD60L.jpg?v=1738081581&width=713','Ring','₹300')"  title="click here">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Belt.jpg" height="auto" width="400px"  alt="belt">
+    
+    <div class="belt">
+      <h2>Leather Belt</h2>
+    <p><b>₹999</b></p><button onclick="location.href='payment.html'"   title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Belt.jpg','Leather Belt','₹999')"  title="click here">Add to Cart</button></div>
+  </div>
+  <div class="product-card">
+    <img src="Wallet.png" height="290" alt="wallet">
+    <h2>Wallet</h2>
+    <p><b>₹799</b></p>
+    <button onclick="location.href='payment.html'"  title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Wallet.png','Wallet','₹799')"  title="click here">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="Watch.png" height="300px" alt="watch">
+    <h2>Watch</h2>
+    <p><b>₹15000</b></p>
+    <button onclick="location.href='payment.html'"  title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Watch.png','Watch','₹15000')"  title="click here">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img  src="Bag.jpg" height="300px" width="200px" alt="Tbag">
+    <h2>Travel bag</h2>
+    <p><b>₹2000</b></p>
+    <button onclick="location.href='payment.html'"  title="click here to buy">Buy now</button>
+    <button onclick="addToCart('Bag.jpg','Travel bag','₹2000')"  title="click here">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img  src="smart watch.png" height="300px" alt="S watch">
     <h2>Smart watch</h2>
     <p><b>₹5000</b></p>
-    <button onclick="location.href='order.html'"  title="click here to buy">Buy now</button>
+    <button onclick="location.href='payment.html'"  title="click here to buy">Buy now</button>
+    <button onclick="addToCart('smart watch.png','Smart watch','₹5000')"  title="click here">Add to Cart</button>
   </div>
-  
 </section>
 
-
 <div class="footer">
-        <div class="f1">
-            <p class="fh">Aura Essentials</p><br>
-            <p id="f1t">The paradise where <b>Fasion</b><br> meets <b>Identity</b></p>
-        </div>
-        <div class="f2">
-            <p class="fh">SHOPPING</p><br>
-            <a class="fta" href="">Clothing Store</a><br><br>
-            <a class="fta" href="">Shoe Store</a><br><br>
-            <a class="fta" href="https://adinath200611.github.io/Accessories/">Accessories</a><br><br>
-        </div>
-        <div class="f3">
-            <p class="fh">CONTACT</p><br>
-            <a class="fta" href="https://mathewjod.github.io/REVANIEXCHANGE/#Contact">Contact us</a><br><br>
-            <a class="fta" href="https://mathewjod.github.io/REVANIEXCHANGE/#Contact">Location</a><br><br>   
-        </div>
-        <div class="f4">
-            <p class="fh">NEWSLETTER</p><br>
-            <p id="f4t">Be the first one to know about our new arrivals, <br>look books, sales & promos!!</p><br>
-            <form>
-                <input type="email" placeholder="Your Email" id="mail">
-                <hr id="f4u">
-            </form>
-        </div>
+  <div class="f1">
+    <p class="fh">Aura Essentials</p><br>
+    <p id="f1t">The paradise where <b>Fasion</b><br> meets <b>Identity</b></p>
+  </div>
+  <div class="f2">
+    <p class="fh">SHOPPING</p><br>
+    <a class="fta" href="">Clothing Store</a><br><br>
+    <a class="fta" href="">Shoe Store</a><br><br>
+    <a class="fta" href="https://adinath200611.github.io/Accessories/">Accessories</a><br><br>
+  </div>
+  <div class="f3">
+    <p class="fh">CONTACT</p><br>
+    <a class="fta" href="https://mathewjod.github.io/REVANIEXCHANGE/#Contact">Contact us</a><br><br>
+    <a class="fta" href="https://mathewjod.github.io/REVANIEXCHANGE/#Contact">Location</a><br><br>   
+  </div>
+  <div class="f4">
+    <p class="fh">NEWSLETTER</p><br>
+    <p id="f4t">Be the first one to know about our new arrivals, <br>look books, sales & promos!!</p><br>
+    <form>
+      <input type="email" placeholder="Your Email" id="mail">
+      <hr id="f4u">
+    </form>
+  </div>
+</div>
+
+<script>
+  function addToCart(image, title, price) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ image, title, price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert("Item added to cart!");
+  }
+
+  function updateCartCount() {
+    const count = JSON.parse(localStorage.getItem('cart'))?.length || 0;
+    document.getElementById('cart-count').textContent = count;
+  }
+
+  updateCartCount();
+</script>
 
 </body>
 </html>

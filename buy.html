@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Product - Aura Essentials</title>
+  <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+
+<!-- Floating Cart Label -->
+<a href="cart.html" class="floating-cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+
+<div class="main-product">
+  <img id="productImage" src="" alt="Selected Product">
+  <div class="product-details">
+    <h1 id="productTitle">Product Title</h1>
+    <p id="productPrice">Rs. 2,999.00</p>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+</div>
+
+<hr class="divider">
+
+<h2 class="other-heading">Other Products You May Like</h2>
+<div class="recommend">
+  <div class="rec-item">
+    <a href="buy.html?image=linen1.avif"><img src="images/images/linen1.avif"></a>
+    <p>Regular Fit Linen-blend trousers</p>
+  </div>
+  <div class="rec-item">
+    <a href="buy.html?image=street3.avif"><img src="images/images/street3.avif"></a>
+    <p>Super Baggy Jeans</p>
+  </div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const image = params.get('image');
+  const imagePath = 'images/images/' + image;
+
+  document.getElementById('productImage').src = imagePath;
+
+  function addToCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({
+      image: imagePath,
+      title: document.getElementById('productTitle').textContent,
+      price: document.getElementById('productPrice').textContent
+    });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    alert("Item added to cart!");
+  }
+
+  function updateCartCount() {
+    const count = JSON.parse(localStorage.getItem('cart'))?.length || 0;
+    document.getElementById('cart-count').textContent = count;
+  }
+
+  updateCartCount();
+</script>
+
+</body>
+</html>
