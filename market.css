@@ -41,6 +41,10 @@ video {
   width: 60px;
   border-radius: 50%;
 }
+.logo:hover{
+  background-color: #504949;
+  transform:scale(1.1);
+}
 
   .products {
     display: grid;
@@ -99,10 +103,10 @@ video {
     display: inline-block;
   }
   
-  .button:hover {
-    background-color: #575151;
+  .button:hover{
+    background-color: #504949;
     transform: scale(1.1);
-  } 
+  }
 
 
 .footer{
